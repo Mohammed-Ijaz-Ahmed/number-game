@@ -1,0 +1,32 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main() {
+    int number,guess,nguess=1;
+    srand(time(0));
+    number=rand()%100+1;
+    //printf("\n the number is %d",number);
+    do
+    {
+        printf("\n enter your guess:");
+        scanf("%d",&guess);
+        if(guess>number)
+        {
+            printf("\nthe answer is lower than your guess\n");
+        }
+        else if(guess<number)
+        {
+             printf("\nthe answer is higher than your guess\n");
+        }
+        else
+        {
+             printf("\nCORRECT !! you guessed the answer in %d chances\n",nguess);
+        }
+        nguess++;
+        
+    }while(guess!=number);
+    
+    return 0;
+}
